@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppBiofisica.RegistroPaciente">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Nuevo Paciente" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" FontSize="Subtitle"/>
+                <Editor x:Name="Paciente_Nombre" Placeholder="Nombres" Grid.Row="1" Grid.Column="0"/>
+                <Editor x:Name="Paciente_Apellido" Placeholder="Apellidos" Grid.Row="2" Grid.Column="0"/>
+                <!--<Editor x:Name="Paciente_TipoDocumento" Placeholder="Tipo Documento" Grid.Row="3" Grid.Column="0"/>-->
+                <Picker x:Name="Paciente_TipoDocumento" Title="Tipo de Documento" Grid.Row="3" Grid.Column="0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>C.C.</x:String>
+                            <x:String>T.I.</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Editor x:Name="Paciente_NumeroDocumento" Placeholder="Numero Documento" Keyboard="Numeric" Grid.Row="4" Grid.Column="0"/>
+                <Editor x:Name="Paciente_Correo" Placeholder="Email" Grid.Row="5" Grid.Column="0"/>
+                <Editor x:Name="Paciente_Edad" Placeholder="Edad" Keyboard="Numeric" Grid.Row="6" Grid.Column="0"/>
+                <!--<Editor x:Name="Paciente_Sexo" Placeholder="Sexo" Grid.Row="7" Grid.Column="0"/>-->
+                <Picker x:Name="Paciente_Sexo" Title="Sexo" Grid.Row="7" Grid.Column="0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Masculino</x:String>
+                            <x:String>Femenino</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Editor x:Name="Paciente_Estatura" Placeholder="Estatura(cm)" Keyboard="Numeric" Grid.Row="8" Grid.Column="0"/>
+                <Editor x:Name="Paciente_Peso" Placeholder="Peso(Kg)" Keyboard="Numeric" Grid.Row="9" Grid.Column="0"/>
+                <Button x:Name="btn_Guardar" Text="Guardar" Clicked="btn_Guardar_Clicked" Grid.Row="10" Grid.Column="0"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
