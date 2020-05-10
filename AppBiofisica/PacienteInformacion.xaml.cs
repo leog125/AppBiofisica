@@ -22,9 +22,9 @@ namespace AppBiofisica
 
         }
 
-        private async void btn_NuevaMedida_Clicked(object sender, EventArgs e)
+        private async void Btn_NuevaMedida_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new NuevaMedida());
         }
 
         private async void btn_HistorialPaciente_Clicked(object sender, EventArgs e)

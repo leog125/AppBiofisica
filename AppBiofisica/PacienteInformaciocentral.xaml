@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppBiofisica.PacienteInformaciocentral"
-             Title="Medidas">
+             Title="Deteccion Escoliosis">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -29,29 +29,29 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Parte 2" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Deteccion Escoliosis" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
                 <Label Text="Zona Cervical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="3" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="3" Grid.Column="1"></Label>
+                <Label x:Name="lbCervicalSuperior2" Grid.Row="3" Grid.Column="1"></Label>
                 <Label Text="Angulo Central Inferior: " Grid.Row="4" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="4" Grid.Column="1"></Label>
+                <Label x:Name="lbCervicalInferior2" Grid.Row="4" Grid.Column="1"></Label>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
 
                 <Label Text="Zona Dorsal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="7" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="7" Grid.Column="1"></Label>
+                <Label x:Name="lbDorsalSuperior2" Text="" Grid.Row="7" Grid.Column="1"></Label>
                 <Label Text="Angulo Central Inferior: " Grid.Row="8" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="8" Grid.Column="1"></Label>
+                <Label x:Name="lbDorsalInferior2" Grid.Row="8" Grid.Column="1"></Label>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
 
                 <Label Text="Zona Lumbar" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="11" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="11" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarSuperior2" Grid.Row="11" Grid.Column="1"></Label>
                 <Label Text="Angulo Central Inferior: " Grid.Row="12" Grid.Column="0"></Label>
-                <Label Text="" Grid.Row="12" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarInferior2" Grid.Row="12" Grid.Column="1"></Label>
 
-                <Button x:Name="btn_Guardar" Text="Guardar" Clicked="btn_Guardar_Clicked" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                <Button x:Name="btn_Guardar" Text="Guardar" Clicked="Btn_Guardar_Clicked" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

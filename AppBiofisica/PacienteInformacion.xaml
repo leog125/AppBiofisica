@@ -29,7 +29,7 @@
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
                 <Label x:Name="lb_Paciente" Text="Paciente: " Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Button x:Name="btn_NuevaMedida" Text="Nueva Medida" Clicked="btn_NuevaMedida_Clicked" Grid.Row="4" Grid.Column="1"></Button>
+                <Button x:Name="btn_NuevaMedida" Text="Nueva Medida" Clicked="Btn_NuevaMedida_Clicked" Grid.Row="4" Grid.Column="1"></Button>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
                 <Editor x:Name="txt_HistorialPaciente" Placeholder="Nº Historial Paciente" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
                 <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
