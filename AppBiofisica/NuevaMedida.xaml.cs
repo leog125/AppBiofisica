@@ -14,12 +14,13 @@ namespace AppBiofisica
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NuevaMedida : ContentPage
     {
-        public NuevaMedida()
+        public int Docuemntopaciente = 0;
+        public NuevaMedida(int documentopaciente)
         {
             InitializeComponent();
             //IniciarSensorOrientacion();
             //IniciarSensorAcelerometro();
-
+            Docuemntopaciente = documentopaciente;
             lbCervicalSuperior.Text = "-25";
             lbCervicalInferior.Text = "25";
             lbDorsalSuperior.Text = "-10";
@@ -31,9 +32,11 @@ namespace AppBiofisica
 
         private async void Btn_Siguiente_Clicked(object sender, EventArgs e)
         {
+            PacienteInformacion PacienteInformacion = new PacienteInformacion();
             //Datos de verificacion para flujo de la app
             Medidas medida = new Medidas();
 
+            medida.Id_Paciente_Medida = Docuemntopaciente;
             medida.Diametro_Columna = Convert.ToInt32(txt_DiametroColumna.Text);
             medida.Diametro_Cervical = Convert.ToInt32(txt_DiametroCervical.Text);
             medida.Diametro_Dorsal = Convert.ToInt32(txt_DiametroDorsal.Text);

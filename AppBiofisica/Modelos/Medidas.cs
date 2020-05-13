@@ -7,8 +7,9 @@ namespace AppBiofisica.Modelos
 {
     public class Medidas
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id_Medida { get; set; }
+        public int Id_Paciente_Medida { get; set; }
         public int Diametro_Columna { get; set; }
         public int Diametro_Cervical { get; set; }
         public int Diametro_Dorsal { get; set; }

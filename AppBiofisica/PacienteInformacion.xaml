@@ -14,10 +14,11 @@
                     <RowDefinition Height="1"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -25,15 +26,16 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Editor x:Name="txt_BuscarPaciente" Placeholder="C.C./T.I. Paciente" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Button x:Name="btn_BuscarPaciente" Text="Buscar" Clicked="btn_BuscarPaciente_Clicked" Grid.Row="0" Grid.Column="2"></Button>
+                <Button x:Name="btn_BuscarPaciente" Text="Buscar" Clicked="Btn_BuscarPaciente_Clicked" Grid.Row="0" Grid.Column="2"></Button>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
                 <Label x:Name="lb_Paciente" Text="Paciente: " Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
                 <Button x:Name="btn_NuevaMedida" Text="Nueva Medida" Clicked="Btn_NuevaMedida_Clicked" Grid.Row="4" Grid.Column="1"></Button>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
                 <Editor x:Name="txt_HistorialPaciente" Placeholder="Nº Historial Paciente" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
+                <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="Btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
+                <Label x:Name="lb_test" Text="Historial" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"></Label>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

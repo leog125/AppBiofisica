@@ -38,6 +38,8 @@ namespace AppBiofisica
             medidas.Angulo_Lumbar_Central_Superior2 = Convert.ToInt32(lbLumbarSuperior2.Text);
             medidas.Angulo_Lumbar_Central_Inferior2 = Convert.ToInt32(lbLumbarInferior2.Text);
 
+            var sad = App.Database.GuardarMedicion(medidas);
+            await DisplayAlert("Historial Guardado", "Historial numero " + sad.Result.Id_Medida.ToString() + " Guardado.", "Ok");
             await Navigation.PushAsync(new PacienteInformacion());
 
         }
