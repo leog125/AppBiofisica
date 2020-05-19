@@ -25,18 +25,24 @@ namespace AppBiofisica
 
         private async void Btn_BuscarPaciente_Clicked(object sender, EventArgs e)
         {
-            var paciente = App.Database.BuscarPaciente(Convert.ToInt32(txt_BuscarPaciente.Text));
+            var paciente = await App.Database.BuscarPaciente(Convert.ToInt32(txt_BuscarPaciente.Text));
             if (paciente != null) 
             {
                 btn_NuevaMedida.IsEnabled = true;
                 btn_HistorialPaciente.IsEnabled = true;
                 txt_HistorialPaciente.IsEnabled = true;
-                idPaciente = paciente.Result.Id_Paciente;
+                idPaciente = paciente.Id_Paciente;
+                lb_Paciente.Text += paciente.Nombre;
             }
             else 
             {
                 txt_BuscarPaciente.Text = "";
-                await DisplayAlert("No Existe", "Documento no encontrado", "Ok");
+                btn_NuevaMedida.IsEnabled = false;
+                btn_HistorialPaciente.IsEnabled = false;
+                txt_HistorialPaciente.IsEnabled = false;
+                idPaciente = -1;
+                lb_Paciente.Text += "";
+                await DisplayAlert("", "Paciente no encontrado", "Ok");
             }
         }
 
@@ -46,13 +52,12 @@ namespace AppBiofisica
             await Navigation.PushAsync(new NuevaMedida(idPaciente));
         }
 
-        private void Btn_HistorialPaciente_Clicked(object sender, EventArgs e)
+        private async void Btn_HistorialPaciente_Clicked(object sender, EventArgs e)
         {
-            int idHistorial = Convert.ToInt32(txt_HistorialPaciente.Text);
-            var dt = App.Database.BuscarHistorial(idHistorial);
+            var dt = await App.Database.BuscarHistorial(Convert.ToInt32(txt_HistorialPaciente.Text));
             if (dt != null) 
             {
-                lb_test.Text = dt.Result.Diametro_Columna.ToString() + " - " + dt.Result.Diametro_Lumbar.ToString();
+                lb_test.Text = "Historial N°" + dt.Id_Medida + " Encontrado -> " + dt.Diametro_Columna.ToString() + " - " + dt.Diametro_Lumbar.ToString();
             }
             else 
             {

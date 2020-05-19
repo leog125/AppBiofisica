@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppBiofisica.PacienteInformacion"
-             Title="Paciente">
+             Title="Buscar Paciente">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -14,7 +14,7 @@
                     <RowDefinition Height="1"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="1"></RowDefinition>
@@ -22,7 +22,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Editor x:Name="txt_BuscarPaciente" Placeholder="C.C./T.I. Paciente" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Editor>

@@ -28,30 +28,44 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Deteccion Escoliosis" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Label>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
-                <Label Text="Zona Cervical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Deteccion Escoliosis" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"></Label>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
+                <Label Text="Zona Cervical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="3" Grid.Column="0"></Label>
                 <Label x:Name="lbCervicalSuperior2" Grid.Row="3" Grid.Column="1"></Label>
+                <Label x:Name="lbCervicalSuperior2_2" Grid.Row="3" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbCervicalSuperior2" Clicked="IbCervicalSuperior2_Clicked"  Grid.Row="3" Grid.Column="3"/>
                 <Label Text="Angulo Central Inferior: " Grid.Row="4" Grid.Column="0"></Label>
                 <Label x:Name="lbCervicalInferior2" Grid.Row="4" Grid.Column="1"></Label>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
+                <Label x:Name="lbCervicalInferior2_2" Grid.Row="4" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbCervicalInferior2" Clicked="IbCervicalInferior2_Clicked" Grid.Row="4" Grid.Column="3"/>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
 
-                <Label Text="Zona Dorsal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Zona Dorsal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="7" Grid.Column="0"></Label>
                 <Label x:Name="lbDorsalSuperior2" Text="" Grid.Row="7" Grid.Column="1"></Label>
+                <Label x:Name="lbDorsalSuperior2_2" Grid.Row="7" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbDorsalSuperior2" Clicked="IbDorsalSuperior2_Clicked" Grid.Row="7" Grid.Column="3"/>
                 <Label Text="Angulo Central Inferior: " Grid.Row="8" Grid.Column="0"></Label>
                 <Label x:Name="lbDorsalInferior2" Grid.Row="8" Grid.Column="1"></Label>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
+                <Label x:Name="lbDorsalInferior2_2" Grid.Row="8" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbDorsalInferior2" Clicked="IbDorsalInferior2_Clicked" Grid.Row="8" Grid.Column="3"/>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
 
-                <Label Text="Zona Lumbar" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Zona Lumbar" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="11" Grid.Column="0"></Label>
                 <Label x:Name="lbLumbarSuperior2" Grid.Row="11" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarSuperior2_2" Grid.Row="11" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbLumbarSuperior2" Clicked="IbLumbarSuperior2_Clicked" Grid.Row="11" Grid.Column="3"/>
                 <Label Text="Angulo Central Inferior: " Grid.Row="12" Grid.Column="0"></Label>
                 <Label x:Name="lbLumbarInferior2" Grid.Row="12" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarInferior2_2" Grid.Row="12" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbLumbarInferior2" Clicked="IbLumbarInferior2_Clicked" Grid.Row="12" Grid.Column="3"/>
 
-                <Button x:Name="btn_Guardar" Text="Guardar" Clicked="Btn_Guardar_Clicked" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                <Button x:Name="btn_Guardar" Text="Guardar" Clicked="Btn_Guardar_Clicked" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="4"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

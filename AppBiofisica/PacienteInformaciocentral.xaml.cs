@@ -33,16 +33,22 @@ namespace AppBiofisica
 
         private async void Btn_Guardar_Clicked(object sender, EventArgs e)
         {
-            medidas.Angulo_Cervical_Central_Superior2 = Convert.ToInt32(lbCervicalSuperior2.Text);
-            medidas.Angulo_Cervical_Central_Inferior2 = Convert.ToInt32(lbCervicalInferior2.Text);
-            medidas.Angulo_Dorsal_Central_Superior2 = Convert.ToInt32(lbDorsalSuperior2.Text);
-            medidas.Angulo_Dorsal_Central_Inferior2 = Convert.ToInt32(lbDorsalInferior2.Text);
-            medidas.Angulo_Lumbar_Central_Superior2 = Convert.ToInt32(lbLumbarSuperior2.Text);
-            medidas.Angulo_Lumbar_Central_Inferior2 = Convert.ToInt32(lbLumbarInferior2.Text);
+            //medidas.Angulo_Cervical_Central_Superior2 = Convert.ToInt32(lbCervicalSuperior2.Text);
+            //medidas.Angulo_Cervical_Central_Inferior2 = Convert.ToInt32(lbCervicalInferior2.Text);
+            //medidas.Angulo_Dorsal_Central_Superior2 = Convert.ToInt32(lbDorsalSuperior2.Text);
+            //medidas.Angulo_Dorsal_Central_Inferior2 = Convert.ToInt32(lbDorsalInferior2.Text);
+            //medidas.Angulo_Lumbar_Central_Superior2 = Convert.ToInt32(lbLumbarSuperior2.Text);
+            //medidas.Angulo_Lumbar_Central_Inferior2 = Convert.ToInt32(lbLumbarInferior2.Text);
+            medidas.Angulo_Cervical_Central_Superior2 = Convert.ToInt32(lbCervicalSuperior2_2.Text);
+            medidas.Angulo_Cervical_Central_Inferior2 = Convert.ToInt32(lbCervicalInferior2_2.Text);
+            medidas.Angulo_Dorsal_Central_Superior2 = Convert.ToInt32(lbDorsalSuperior2_2.Text);
+            medidas.Angulo_Dorsal_Central_Inferior2 = Convert.ToInt32(lbDorsalInferior2_2.Text);
+            medidas.Angulo_Lumbar_Central_Superior2 = Convert.ToInt32(lbLumbarSuperior2_2.Text);
+            medidas.Angulo_Lumbar_Central_Inferior2 = Convert.ToInt32(lbLumbarInferior2_2.Text);
 
             var sad = App.Database.GuardarMedicion(medidas);
             DetenerSensorAcelerometro();
-            await DisplayAlert("Historial Guardado", "Historial numero " + sad.Result.Id_Medida.ToString() + " Guardado.", "Ok");
+            await DisplayAlert("Historial Guardado", "Historial numero " + (sad.Result.Id_Medida + 1).ToString() + " Guardado.", "Ok");
             await Navigation.PushAsync(new PacienteInformacion());
 
         }
@@ -83,5 +89,34 @@ namespace AppBiofisica
         }
         #endregion
 
+        private void IbCervicalSuperior2_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalSuperior2_2.Text = lbCervicalSuperior2.Text;
+        }
+
+        private void IbCervicalInferior2_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalInferior2_2.Text = lbCervicalInferior2.Text;
+        }
+
+        private void IbDorsalSuperior2_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalSuperior2_2.Text = lbDorsalSuperior2.Text;
+        }
+
+        private void IbDorsalInferior2_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalInferior2_2.Text = lbDorsalInferior2.Text;
+        }
+
+        private void IbLumbarSuperior2_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarSuperior2_2.Text = lbLumbarSuperior2.Text;
+        }
+
+        private void IbLumbarInferior2_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarInferior2_2.Text = lbLumbarInferior2.Text;
+        }
     }
 }

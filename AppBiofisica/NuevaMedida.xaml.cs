@@ -41,12 +41,18 @@ namespace AppBiofisica
                 Diametro_Cervical = Convert.ToInt32(txt_DiametroCervical.Text),
                 Diametro_Dorsal = Convert.ToInt32(txt_DiametroDorsal.Text),
                 Diametro_Lumbar = Convert.ToInt32(txt_DiametroLumbar.Text),
-                Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior.Text),
-                Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior.Text),
-                Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior.Text),
-                Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior.Text),
-                Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior.Text),
-                Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior.Text)
+                //Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior.Text),
+                //Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior.Text),
+                //Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior.Text),
+                //Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior.Text),
+                //Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior.Text),
+                //Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior.Text)
+                Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior1_v2.Text),
+                Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior1_v2.Text),
+                Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior1_v2.Text),
+                Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior1_v2.Text),
+                Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior1_v2.Text),
+                Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior1_v2.Text)
             };
             DetenerSensorAcelerometro();
             await Navigation.PushAsync(new PacienteInformaciocentral(medida));
@@ -132,5 +138,34 @@ namespace AppBiofisica
 
         #endregion
 
+        private void IbCervicalSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalSuperior1_v2.Text = lbCervicalSuperior.Text;
+        }
+
+        private void IbCervicalInferior_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalInferior1_v2.Text = lbCervicalInferior.Text;
+        }
+
+        private void IbDorsalSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalSuperior1_v2.Text = lbDorsalSuperior.Text;
+        }
+
+        private void IbDorsalInferior_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalInferior1_v2.Text = lbDorsalInferior.Text;
+        }
+
+        private void IbLumbarSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarSuperior1_v2.Text = lbLumbarSuperior.Text;
+        }
+
+        private void IbLumbarInferior_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarInferior1_v2.Text = lbLumbarInferior.Text;
+        }
     }
 }

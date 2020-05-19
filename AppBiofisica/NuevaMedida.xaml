@@ -31,33 +31,48 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Editor x:Name="txt_DiametroColumna" Placeholder="Diametro Columna(Cm)" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Editor x:Name="txt_DiametroCervical" Placeholder="Diametro Cervical(Cm)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Editor x:Name="txt_DiametroDorsal" Placeholder="Diametro Dorsal(Cm)" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Editor x:Name="txt_DiametroLumbar" Placeholder="Diametro Lumbar(Cm)" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
-                <Label Text="Medidas: Zona Cervical" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Editor x:Name="txt_DiametroColumna" Placeholder="Diametro Columna(Cm)" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"></Editor>
+                <Editor x:Name="txt_DiametroCervical" Placeholder="Diametro Cervical(Cm)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"></Editor>
+                <Editor x:Name="txt_DiametroDorsal" Placeholder="Diametro Dorsal(Cm)" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"></Editor>
+                <Editor x:Name="txt_DiametroLumbar" Placeholder="Diametro Lumbar(Cm)" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"></Editor>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
+                
+                <Label Text="Medidas: Zona Cervical" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="6" Grid.Column="0"></Label>
                 <Label x:Name="lbCervicalSuperior" Text="" Grid.Row="6" Grid.Column="1"></Label>
+                <Label x:Name="lbCervicalSuperior1_v2" Text="" Grid.Row="6" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbCervicalSuperior" Clicked="IbCervicalSuperior_Clicked" Grid.Row="6" Grid.Column="3"></ImageButton>
                 <Label Text="Angulo Central Inferior: " Grid.Row="7" Grid.Column="0"></Label>
                 <Label x:Name="lbCervicalInferior" Text="" Grid.Row="7" Grid.Column="1"></Label>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
+                <Label x:Name="lbCervicalInferior1_v2" Text="" Grid.Row="7" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbCervicalInferior" Clicked="IbCervicalInferior_Clicked" Grid.Row="7" Grid.Column="3"></ImageButton>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
 
-                <Label Text="Medidas: Zona Dorsal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Medidas: Zona Dorsal" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="10" Grid.Column="0"></Label>
                 <Label x:Name="lbDorsalSuperior" Text="" Grid.Row="10" Grid.Column="1"></Label>
+                <Label x:Name="lbDorsalSuperior1_v2" Text="" Grid.Row="10" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbDorsalSuperior" Clicked="IbDorsalSuperior_Clicked" Grid.Row="10" Grid.Column="3"></ImageButton>
                 <Label Text="Angulo Central Inferior: " Grid.Row="11" Grid.Column="0"></Label>
                 <Label x:Name="lbDorsalInferior" Text="" Grid.Row="11" Grid.Column="1"></Label>
+                <Label x:Name="lbDorsalInferior1_v2" Text="" Grid.Row="11" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbDorsalInferior" Clicked="IbDorsalInferior_Clicked" Grid.Row="11" Grid.Column="3"></ImageButton>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
 
-                <Label Text="Medidas: Zona Lumbar" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+                <Label Text="Medidas: Zona Lumbar" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="14" Grid.Column="0"></Label>
                 <Label x:Name="lbLumbarSuperior" Text="" Grid.Row="14" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarSuperior1_v2" Text="" Grid.Row="14" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbLumbarSuperior" Clicked="IbLumbarSuperior_Clicked" Grid.Row="14" Grid.Column="3"></ImageButton>
                 <Label Text="Angulo Central Inferior: " Grid.Row="15" Grid.Column="0"></Label>
                 <Label x:Name="lbLumbarInferior" Text="" Grid.Row="15" Grid.Column="1"></Label>
+                <Label x:Name="lbLumbarInferior1_v2" Text="" Grid.Row="15" Grid.Column="2"></Label>
+                <ImageButton x:Name="IbLumbarInferior" Clicked="IbLumbarInferior_Clicked" Grid.Row="15" Grid.Column="3"></ImageButton>
 
-                <Button x:Name="btn_Siguiente" Text="Siguente" Clicked="Btn_Siguiente_Clicked" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+                <Button x:Name="btn_Siguiente" Text="Siguente" Clicked="Btn_Siguiente_Clicked" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="4"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

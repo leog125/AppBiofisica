@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppBiofisica.RegistroPaciente">
+             x:Class="AppBiofisica.RegistroPaciente"
+             Title="Nuevo Paciente">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -24,7 +25,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Nuevo Paciente" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" FontSize="Subtitle"/>
+                <Label Text="" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" FontSize="Subtitle"/>
                 <Editor x:Name="Paciente_Nombre" Placeholder="Nombres" Grid.Row="1" Grid.Column="0"/>
                 <Editor x:Name="Paciente_Apellido" Placeholder="Apellidos" Grid.Row="2" Grid.Column="0"/>
                 <!--<Editor x:Name="Paciente_TipoDocumento" Placeholder="Tipo Documento" Grid.Row="3" Grid.Column="0"/>-->
