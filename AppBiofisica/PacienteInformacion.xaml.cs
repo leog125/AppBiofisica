@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppBiofisica.Clases;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -57,11 +58,15 @@ namespace AppBiofisica
             var dt = await App.Database.BuscarHistorial(Convert.ToInt32(txt_HistorialPaciente.Text));
             if (dt != null) 
             {
-                lb_test.Text = "Historial N°" + dt.Id_Medida + " Encontrado -> " + dt.Diametro_Columna.ToString() + " - " + dt.Diametro_Lumbar.ToString();
+                Historial historial = new Historial();
+                var s = historial.CrearHistorial(dt).Result;
+                lb_Historial.Text = s;
+                //lb_Historial.Text = "Historial N°" + dt.Id_Medida + " Encontrado -> " + dt.Diametro_Columna.ToString() + " - " + dt.Diametro_Lumbar.ToString();
             }
             else 
             {
-                lb_test.Text = "No existe el historial";
+                await DisplayAlert("", "Hisotrial no encotrado", "Ok");
+                lb_Historial.Text = "";
             }
         }
     }

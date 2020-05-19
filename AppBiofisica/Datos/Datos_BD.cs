@@ -39,5 +39,10 @@ namespace AppBiofisica.Datos
             return _database.Table<Paciente>().Where(i => i.NumeroDocumento == DocumentoPaciente).FirstOrDefaultAsync();
         }
 
+        public Task<Paciente> BuscarPacienteHistorial(int idPaciente)
+        {
+            return _database.Table<Paciente>().Where(i => i.Id_Paciente == idPaciente).FirstOrDefaultAsync();
+        }
+
     }
 }

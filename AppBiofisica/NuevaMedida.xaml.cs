@@ -18,15 +18,8 @@ namespace AppBiofisica
         public NuevaMedida(int documentopaciente)
         {
             InitializeComponent();
-            //IniciarSensorOrientacion();
             IniciarSensorAcelerometro();
             Docuemntopaciente = documentopaciente;
-            //lbCervicalSuperior.Text = "-25";
-            //lbCervicalInferior.Text = "25";
-            //lbDorsalSuperior.Text = "-10";
-            //lbDorsalInferior.Text = "-10";
-            //lbLumbarSuperior.Text = "15";
-            //lbLumbarInferior.Text = "-15";
 
         }
 
@@ -41,12 +34,6 @@ namespace AppBiofisica
                 Diametro_Cervical = Convert.ToInt32(txt_DiametroCervical.Text),
                 Diametro_Dorsal = Convert.ToInt32(txt_DiametroDorsal.Text),
                 Diametro_Lumbar = Convert.ToInt32(txt_DiametroLumbar.Text),
-                //Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior.Text),
-                //Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior.Text),
-                //Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior.Text),
-                //Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior.Text),
-                //Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior.Text),
-                //Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior.Text)
                 Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior1_v2.Text),
                 Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior1_v2.Text),
                 Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior1_v2.Text),
@@ -56,6 +43,36 @@ namespace AppBiofisica
             };
             DetenerSensorAcelerometro();
             await Navigation.PushAsync(new PacienteInformaciocentral(medida));
+        }
+
+        private void IbCervicalSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalSuperior1_v2.Text = lbCervicalSuperior.Text;
+        }
+
+        private void IbCervicalInferior_Clicked(object sender, EventArgs e)
+        {
+            lbCervicalInferior1_v2.Text = lbCervicalInferior.Text;
+        }
+
+        private void IbDorsalSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalSuperior1_v2.Text = lbDorsalSuperior.Text;
+        }
+
+        private void IbDorsalInferior_Clicked(object sender, EventArgs e)
+        {
+            lbDorsalInferior1_v2.Text = lbDorsalInferior.Text;
+        }
+
+        private void IbLumbarSuperior_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarSuperior1_v2.Text = lbLumbarSuperior.Text;
+        }
+
+        private void IbLumbarInferior_Clicked(object sender, EventArgs e)
+        {
+            lbLumbarInferior1_v2.Text = lbLumbarInferior.Text;
         }
 
         #region Sensor Acelerometro
@@ -91,10 +108,6 @@ namespace AppBiofisica
             lbDorsalInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
             lbLumbarSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
             lbLumbarInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-
-            //lbLumbarSuperior.Text = (Math.Asin(e.Reading.Acceleration.X) * (180/Math.PI)).ToString("0.00");
-            //lbLumbarInferior.Text = (Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString("0.00");
-            //btn_Siguiente.Text = (Math.Asin(e.Reading.Acceleration.Z) * (180 / Math.PI)).ToString("0.00");
         }
         #endregion
 
@@ -137,35 +150,5 @@ namespace AppBiofisica
         }
 
         #endregion
-
-        private void IbCervicalSuperior_Clicked(object sender, EventArgs e)
-        {
-            lbCervicalSuperior1_v2.Text = lbCervicalSuperior.Text;
-        }
-
-        private void IbCervicalInferior_Clicked(object sender, EventArgs e)
-        {
-            lbCervicalInferior1_v2.Text = lbCervicalInferior.Text;
-        }
-
-        private void IbDorsalSuperior_Clicked(object sender, EventArgs e)
-        {
-            lbDorsalSuperior1_v2.Text = lbDorsalSuperior.Text;
-        }
-
-        private void IbDorsalInferior_Clicked(object sender, EventArgs e)
-        {
-            lbDorsalInferior1_v2.Text = lbDorsalInferior.Text;
-        }
-
-        private void IbLumbarSuperior_Clicked(object sender, EventArgs e)
-        {
-            lbLumbarSuperior1_v2.Text = lbLumbarSuperior.Text;
-        }
-
-        private void IbLumbarInferior_Clicked(object sender, EventArgs e)
-        {
-            lbLumbarInferior1_v2.Text = lbLumbarInferior.Text;
-        }
     }
 }

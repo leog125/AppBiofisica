@@ -35,7 +35,7 @@
                 <Editor x:Name="txt_HistorialPaciente" Placeholder="Nº Historial Paciente" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
                 <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="Btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
                 <BoxView BackgroundColor="SkyBlue" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Label x:Name="lb_test" Text="Historial" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+                <Label x:Name="lb_Historial" Text="" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"></Label>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

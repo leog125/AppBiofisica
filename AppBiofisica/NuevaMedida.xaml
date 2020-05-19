@@ -29,7 +29,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -60,7 +60,7 @@
                 <Label x:Name="lbDorsalInferior" Text="" Grid.Row="11" Grid.Column="1"></Label>
                 <Label x:Name="lbDorsalInferior1_v2" Text="" Grid.Row="11" Grid.Column="2"></Label>
                 <ImageButton x:Name="IbDorsalInferior" Clicked="IbDorsalInferior_Clicked" Grid.Row="11" Grid.Column="3"></ImageButton>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"></BoxView>
+                <BoxView BackgroundColor="SkyBlue" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4"></BoxView>
 
                 <Label Text="Medidas: Zona Lumbar" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="4"></Label>
                 <Label Text="Angulo Central Superior: " Grid.Row="14" Grid.Column="0"></Label>
