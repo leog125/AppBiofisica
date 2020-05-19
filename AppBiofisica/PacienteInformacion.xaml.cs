@@ -59,7 +59,7 @@ namespace AppBiofisica
             if (dt != null) 
             {
                 Historial historial = new Historial();
-                var s = historial.CrearHistorial(dt).Result;
+                string s = historial.CrearHistorial(dt);
                 lb_Historial.Text = s;
                 //lb_Historial.Text = "Historial N°" + dt.Id_Medida + " Encontrado -> " + dt.Diametro_Columna.ToString() + " - " + dt.Diametro_Lumbar.ToString();
             }

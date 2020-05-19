@@ -7,36 +7,46 @@
              x:Class="AppBiofisica.PacienteInformacion"
              Title="Buscar Paciente">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="1"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Editor x:Name="txt_BuscarPaciente" Placeholder="C.C./T.I. Paciente" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Button x:Name="btn_BuscarPaciente" Text="Buscar" Clicked="Btn_BuscarPaciente_Clicked" Grid.Row="0" Grid.Column="2"></Button>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Label x:Name="lb_Paciente" Text="Paciente: " Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Button x:Name="btn_NuevaMedida" Text="Nueva Medida" Clicked="Btn_NuevaMedida_Clicked" Grid.Row="4" Grid.Column="1"></Button>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Editor x:Name="txt_HistorialPaciente" Placeholder="Nº Historial Paciente" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
-                <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="Btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
-                <BoxView BackgroundColor="SkyBlue" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
-                <Label x:Name="lb_Historial" Text="" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"></Label>
-            </Grid>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" BorderColor="LightSkyBlue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="1"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Editor x:Name="txt_BuscarPaciente" Placeholder="C.C./T.I. Paciente" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
+                    <Button x:Name="btn_BuscarPaciente" Text="Buscar" Clicked="Btn_BuscarPaciente_Clicked" Grid.Row="0" Grid.Column="2"></Button>
+                    <BoxView BackgroundColor="SkyBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
+                    <Label x:Name="lb_Paciente" Text="Paciente: " Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"></Label>
+                    <BoxView BackgroundColor="SkyBlue" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
+                    <Button x:Name="btn_NuevaMedida" Text="Nueva Medida" Clicked="Btn_NuevaMedida_Clicked" Grid.Row="4" Grid.Column="1"></Button>
+                    <BoxView BackgroundColor="SkyBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
+                    <Editor x:Name="txt_HistorialPaciente" Placeholder="Nº Historial Paciente" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Editor>
+                    <Button x:Name="btn_HistorialPaciente" Text="Buscar" Clicked="Btn_HistorialPaciente_Clicked" Grid.Row="6" Grid.Column="2"></Button>
+                    <BoxView BackgroundColor="SkyBlue" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>
+                    </Grid>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <Grid>
+                    <Label x:Name="lb_Historial" Text="" LineBreakMode="WordWrap"></Label>
+                </Grid>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
