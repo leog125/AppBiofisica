@@ -31,11 +31,52 @@ namespace AppBiofisica
             medidas.Angulo_Lumbar_Central_Superior2 = Convert.ToInt32(lbLumbarSuperior2_2.Text);
             medidas.Angulo_Lumbar_Central_Inferior2 = Convert.ToInt32(lbLumbarInferior2_2.Text);
 
+            CalcularDiagnostico();
+
             var sad = App.Database.GuardarMedicion(medidas);
             DetenerSensorAcelerometro();
             await DisplayAlert("Historial Guardado", "Historial numero " + (sad.Result.Id_Medida + 1).ToString() + " Guardado.", "Ok");
             await Navigation.PushAsync(new PacienteInformacion());
 
+        }
+
+        private void CalcularDiagnostico() 
+        {
+            //Diagnostico Cifosis Lordosis
+            if(medidas.Angulo_Cervical_Central_Superior < 0 && medidas.Angulo_Cervical_Central_Inferior > 0) 
+            {
+                if((Math.Abs(medidas.Angulo_Cervical_Central_Superior) + Math.Abs(medidas.Angulo_Cervical_Central_Inferior)) > 25 && (Math.Abs(medidas.Angulo_Cervical_Central_Superior) + Math.Abs(medidas.Angulo_Cervical_Central_Inferior)) < 40) 
+                {
+                    medidas.Diag_Lordosis_Cervical = true;
+                }
+            }
+            else if (medidas.Angulo_Dorsal_Central_Superior > 0 && medidas.Angulo_Dorsal_Central_Inferior < 0) 
+            {
+                if((Math.Abs(medidas.Angulo_Dorsal_Central_Superior) + Math.Abs(medidas.Angulo_Dorsal_Central_Inferior)) > 20 && (Math.Abs(medidas.Angulo_Dorsal_Central_Superior) + Math.Abs(medidas.Angulo_Dorsal_Central_Inferior)) < 45) 
+                {
+                    medidas.Diag_Cifosis_Dorsal = true;
+                }
+            }
+            else if (medidas.Angulo_Lumbar_Central_Superior < 0 && medidas.Angulo_Lumbar_Central_Inferior > 0)
+            {
+                if ((Math.Abs(medidas.Angulo_Lumbar_Central_Superior) + Math.Abs(medidas.Angulo_Lumbar_Central_Inferior)) > 15 && (Math.Abs(medidas.Angulo_Lumbar_Central_Superior) + Math.Abs(medidas.Angulo_Lumbar_Central_Inferior)) < 30)
+                {
+                    medidas.Diag_Lordosis_Lumbar = true;
+                }
+            }
+            //Deteccion de Escoliosis
+            if((Math.Abs(medidas.Angulo_Cervical_Central_Superior2) + Math.Abs(medidas.Angulo_Cervical_Central_Inferior2)) > 10) 
+            {
+                medidas.Diag_Escoliosis_Cervical = true;
+            }
+            if ((Math.Abs(medidas.Angulo_Dorsal_Central_Superior2) + Math.Abs(medidas.Angulo_Dorsal_Central_Inferior2)) > 10)
+            {
+                medidas.Diag_Escoliosis_Dorsal = true;
+            }
+            if ((Math.Abs(medidas.Angulo_Lumbar_Central_Superior2) + Math.Abs(medidas.Angulo_Lumbar_Central_Inferior2)) > 10)
+            {
+                medidas.Diag_Escoliosis_Lumbar = true;
+            }
         }
 
         private void IbCervicalSuperior2_Clicked(object sender, EventArgs e)
