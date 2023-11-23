@@ -1,44 +1,112 @@
-#define SOUND_SPEED 0.034             // Velocidad del sonido en el aire ≈ 343 m/s
-#define NUM_SENSORS 4                 // Número de sensores
-#define TRIGGER_PINS { 2, 4, 6, 8 }   // Pines de trigger
-#define ECHO_PINS { 3, 5, 7, 9 }      // Pines de echo
-
-int triggerPins[NUM_SENSORS] = TRIGGER_PINS;  // Copia los pines de trigger
-int echoPins[NUM_SENSORS] = ECHO_PINS;        // Copia los pines de echo
+#define SOUND_SPEED 0.034  // Velocidad del sonido en el aire ≈ 343 m/s
+#define ECHO_PIN_1 12      // Pin del trigger del sensor  Ok
+#define TRIGGER_PIN_1 13   // Pin del eco del sensor      Ok
+#define ECHO_PIN_2 32      // Pin del trigger del sensor  Ok
+#define TRIGGER_PIN_2 33   // Pin del eco del sensor      Ok
+#define ECHO_PIN_3 2      // Pin del trigger del sensor   Ok
+#define TRIGGER_PIN_3 15   // Pin del eco del sensor      Ok
+#define ECHO_PIN_4 27      // Pin del trigger del sensor  Ok
+#define TRIGGER_PIN_4 14   // Pin del eco del sensor      Ok
 
 void setup() {
-  Serial.begin(115200);
-  for (int i = 0; i < NUM_SENSORS; i++) {
-    pinMode(triggerPins[i], OUTPUT);
-    pinMode(echoPins[i], INPUT);
-  }
+  Serial.begin(9600);
+  pinMode(TRIGGER_PIN_1, OUTPUT); 
+  pinMode(ECHO_PIN_1, INPUT);
+  pinMode(TRIGGER_PIN_2, OUTPUT);
+  pinMode(ECHO_PIN_2, INPUT);
+  pinMode(TRIGGER_PIN_3, OUTPUT);
+  pinMode(ECHO_PIN_3, INPUT);
+  pinMode(TRIGGER_PIN_4, OUTPUT);
+  pinMode(ECHO_PIN_4, INPUT);
 }
 
 void loop() {
-  for (int i = 0; i < NUM_SENSORS; i++) {
-    float distance = calculateDistance(i);
-    Serial.print("Sensor ");
-    Serial.print(i + 1);
-    Serial.print(": Distancia en cm: ");
-    Serial.println(distance);
-  }
-  delay(1000);  // Espera un segundo antes de realizar la siguiente medición
+  calculateDistance_1();
+  delay(200);
+  calculateDistance_2();
+  delay(200);
+  calculateDistance_3();
+  delay(200);
+  calculateDistance_4();
+  delay(200);
 }
 
-float calculateDistance(int sensorIndex) {
+void calculateDistance_1() {
   long duration;
   float distance_cm;
 
   // Genera un pulso corto en el pin del trigger para iniciar la medición
-  digitalWrite(triggerPins[sensorIndex], LOW);
+  digitalWrite(TRIGGER_PIN_1, LOW);
   delayMicroseconds(2);
-  digitalWrite(triggerPins[sensorIndex], HIGH);
+  digitalWrite(TRIGGER_PIN_1, HIGH);
   delayMicroseconds(10);
-  digitalWrite(triggerPins[sensorIndex], LOW);
+  digitalWrite(TRIGGER_PIN_1, LOW);
 
   // Lee la duración del pulso en el pin del echo
-  duration = pulseIn(echoPins[sensorIndex], HIGH);
+  duration = pulseIn(ECHO_PIN_1, HIGH);
   // Calcula la distancia en centímetros
   distance_cm = duration * SOUND_SPEED / 2;  // Fórmula para convertir la duración del eco a cm
-  return distance_cm;
+  Serial.print("Sensor 1");
+  Serial.print(": Distancia en cm: ");
+  Serial.println(distance_cm);
+}
+
+void calculateDistance_2() {
+  long duration;
+  float distance_cm;
+
+  // Genera un pulso corto en el pin del trigger para iniciar la medición
+  digitalWrite(TRIGGER_PIN_2, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIGGER_PIN_2, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN_2, LOW);
+
+  // Lee la duración del pulso en el pin del echo
+  duration = pulseIn(ECHO_PIN_2, HIGH);
+  // Calcula la distancia en centímetros
+  distance_cm = duration * SOUND_SPEED / 2;  // Fórmula para convertir la duración del eco a cm
+  Serial.print("Sensor 2");
+  Serial.print(": Distancia en cm: ");
+  Serial.println(distance_cm);
+}
+
+void calculateDistance_3() {
+  long duration;
+  float distance_cm;
+
+  // Genera un pulso corto en el pin del trigger para iniciar la medición
+  digitalWrite(TRIGGER_PIN_3, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIGGER_PIN_3, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN_3, LOW);
+
+  // Lee la duración del pulso en el pin del echo
+  duration = pulseIn(ECHO_PIN_3, HIGH);
+  // Calcula la distancia en centímetros
+  distance_cm = duration * SOUND_SPEED / 2;  // Fórmula para convertir la duración del eco a cm
+  Serial.print("Sensor 3");
+  Serial.print(": Distancia en cm: ");
+  Serial.println(distance_cm);
+}
+
+void calculateDistance_4() {
+  long duration;
+  float distance_cm;
+
+  // Genera un pulso corto en el pin del trigger para iniciar la medición
+  digitalWrite(TRIGGER_PIN_4, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIGGER_PIN_4, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN_4, LOW);
+
+  // Lee la duración del pulso en el pin del echo
+  duration = pulseIn(ECHO_PIN_4, HIGH);
+  // Calcula la distancia en centímetros
+  distance_cm = duration * SOUND_SPEED / 2;  // Fórmula para convertir la duración del eco a cm
+  Serial.print("Sensor 4");
+  Serial.print(": Distancia en cm: ");
+  Serial.println(distance_cm);
 }

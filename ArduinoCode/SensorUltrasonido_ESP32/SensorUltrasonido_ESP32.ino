@@ -1,6 +1,6 @@
 #define SOUND_SPEED 0.034   // Velocidad del sonido en el aire ≈ 343 m/s
-#define TRIGGER_PIN 32       // Pin del trigger del sensor
-#define ECHO_PIN 33          // Pin del eco del sensor
+#define ECHO_PIN 27          // Pin del eco del sensor
+#define TRIGGER_PIN 14      // Pin del trigger del sensor
 
 void setup() {
   Serial.begin(115200);
