@@ -25,24 +25,41 @@ namespace AppBiofisica
 
         private async void Btn_Siguiente_Clicked(object sender, EventArgs e)
         {
-            PacienteInformacion PacienteInformacion = new PacienteInformacion();
             //Datos de verificacion para flujo de la app
-            Medidas medida = new Medidas
+            if (ValidarDatos())
             {
-                Id_Paciente_Medida = Docuemntopaciente,
-                Diametro_Columna = Convert.ToInt32(txt_DiametroColumna.Text),
-                Diametro_Cervical = Convert.ToInt32(txt_DiametroCervical.Text),
-                Diametro_Dorsal = Convert.ToInt32(txt_DiametroDorsal.Text),
-                Diametro_Lumbar = Convert.ToInt32(txt_DiametroLumbar.Text),
-                Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior1_v2.Text),
-                Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior1_v2.Text),
-                Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior1_v2.Text),
-                Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior1_v2.Text),
-                Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior1_v2.Text),
-                Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior1_v2.Text)
-            };
-            DetenerSensorAcelerometro();
-            await Navigation.PushAsync(new PacienteInformaciocentral(medida));
+                Medidas medida = new Medidas
+                {
+                    Id_Paciente_Medida = Docuemntopaciente,
+                    Diametro_Columna = Convert.ToInt32(txt_DiametroColumna.Text),
+                    Diametro_Cervical = Convert.ToInt32(txt_DiametroCervical.Text),
+                    Diametro_Dorsal = Convert.ToInt32(txt_DiametroDorsal.Text),
+                    Diametro_Lumbar = Convert.ToInt32(txt_DiametroLumbar.Text),
+                    Angulo_Cervical_Central_Superior = Convert.ToInt32(lbCervicalSuperior1_v2.Text),
+                    Angulo_Cervical_Central_Inferior = Convert.ToInt32(lbCervicalInferior1_v2.Text),
+                    Angulo_Dorsal_Central_Superior = Convert.ToInt32(lbDorsalSuperior1_v2.Text),
+                    Angulo_Dorsal_Central_Inferior = Convert.ToInt32(lbDorsalInferior1_v2.Text),
+                    Angulo_Lumbar_Central_Superior = Convert.ToInt32(lbLumbarSuperior1_v2.Text),
+                    Angulo_Lumbar_Central_Inferior = Convert.ToInt32(lbLumbarInferior1_v2.Text)
+                };
+                DetenerSensorAcelerometro();
+                await Navigation.PushAsync(new PacienteInformaciocentral(medida)); 
+            } else await DisplayAlert("Advertencia", "No ha registrado la informacion completa", "Ok");
+        }
+
+        private bool ValidarDatos()
+        {
+            if (string.IsNullOrEmpty(txt_DiametroColumna.Text)) return false;
+            if (string.IsNullOrEmpty(txt_DiametroCervical.Text)) return false;
+            if (string.IsNullOrEmpty(txt_DiametroDorsal.Text)) return false;
+            if (string.IsNullOrEmpty(txt_DiametroLumbar.Text)) return false;
+            if (string.IsNullOrEmpty(lbCervicalSuperior1_v2.Text)) return false;
+            if (string.IsNullOrEmpty(lbCervicalInferior1_v2.Text)) return false;
+            if (string.IsNullOrEmpty(lbDorsalSuperior1_v2.Text)) return false;
+            if (string.IsNullOrEmpty(lbDorsalInferior1_v2.Text)) return false;
+            if (string.IsNullOrEmpty(lbLumbarSuperior1_v2.Text)) return false;
+            if (string.IsNullOrEmpty(lbLumbarInferior1_v2.Text)) return false;
+            return true;
         }
 
         private void IbCervicalSuperior_Clicked(object sender, EventArgs e)
@@ -102,12 +119,20 @@ namespace AppBiofisica
         private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
         {
             //recopilacion de informacion del sensor acelerometro
-            lbCervicalSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-            lbCervicalInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-            lbDorsalSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-            lbDorsalInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-            lbLumbarSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
-            lbLumbarInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+            try
+            {
+                lbCervicalSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+                lbCervicalInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+                lbDorsalSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+                lbDorsalInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+                lbLumbarSuperior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+                lbLumbarInferior.Text = Convert.ToInt32(Math.Asin(e.Reading.Acceleration.Y) * (180 / Math.PI)).ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         #endregion
 

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppBiofisica.MainPage"
-             Title="App Biofisica">
+             Title="App Practica 5">
 
     <StackLayout>
         <!-- Place new controls here -->

@@ -36,7 +36,8 @@ namespace AppBiofisica
                     Peso = Convert.ToInt32(Paciente_Peso.Text),
                 };
                 await App.Database.GuardarPaciente(paciente);
-                await Navigation.PushAsync(new MainPage());
+                await DisplayAlert("Registro", "Paciente registrado con exito!", "Ok");
+                await Navigation.PushAsync(new PacienteInformacion());
             }
             else
                 await DisplayAlert("Advertencia", "Campos no validos o vacios", "Ok");
